@@ -19,13 +19,15 @@ public class FormInteraction implements Task {
                 Enter.theValue("alex@email.com").into(DemoQaForm.TXT_EMAIL),
                 Click.on(DemoQaForm.RADIO_GENRE),
                 Enter.theValue("4758937375743353757").into(DemoQaForm.TXT_NUMBER),
-                Click.on(DemoQaForm.TABLE_BIRTHDAY_DATE).then(Hit.the(Keys.ARROW_DOWN).keyIn(DemoQaForm.TABLE_BIRTHDAY_DATE).then(SelectFromOptions.byVisibleText("June").from(DemoQaForm.TABLE_BIRTHDAY_DATE))),
-                Click.on(DemoQaForm.SELECT_BIRTHDAY_MONTH),
-                Click.on(DemoQaForm.SELECT_BIRTHDAY_YEAR),
+                Click.on(DemoQaForm.TABLE_BIRTHDAY_DATE),
+                SelectFromOptions.byValue("5").from(DemoQaForm.SELECT_BIRTHDAY_MONTH),
+                SelectFromOptions.byValue("1995").from(DemoQaForm.SELECT_BIRTHDAY_YEAR),
                 Click.on(DemoQaForm.SELECT_BIRTHDAY_DAY),
                 Enter.theValue("Maths").into(DemoQaForm.TXT_SUBJECTS).thenHit(Keys.ENTER),
                 Click.on(DemoQaForm.CHECK_BOX_HOBBIES),
-                Enter.theValue("calle siempre viva").into(DemoQaForm.TXT_ADDRESS)
+                Enter.theValue("calle siempre viva").into(DemoQaForm.TXT_ADDRESS),
+                Enter.theValue("Haryana").into(DemoQaForm.INPUT_STATE).thenHit(Keys.ENTER),
+                Enter.theValue("Delhi").into(DemoQaForm.INPUT_CITY).thenHit(Keys.ENTER)
         );
     }
 
